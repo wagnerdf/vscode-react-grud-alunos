@@ -9,13 +9,20 @@ class Alunos extends React.Component{
 
 
         this.state = {
-            alunos : [
-                {'id':1, 'nome':'Wagner Andrade', 'email':'wagner@gmail.com'},
-                {'id':2, 'nome':'Marina', 'email':'Marina@gmail.com'},
-                {'id':3, 'nome':'Kelly', 'email':'kelly@gmail.com'},
-                {'id':4, 'nome':'Bruna', 'email':'Bruna@gmail.com'}
-            ]
+            alunos : []
         }
+    }
+
+    componentDidMount(){
+        fetch("http://localhost:8080/alunos/2")
+        .then(resposta => resposta.json())
+        .then(dados => {
+           this.setState({ alunos : dados}) 
+        })
+    }
+
+    componentWillUnmount(){
+        alert("O componente Alunos foi desmontado!")
     }
 
     render(){
@@ -29,12 +36,11 @@ class Alunos extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-
                     {
                         this.state.alunos.map((aluno) =>
 
                             <tr>
-                                <td> {aluno.nome} </td>
+                                <td> {aluno.aluno} </td>
                                 <td> {aluno.email} </td>
                                 <td>Atualizar Excluir</td>
                             </tr>
