@@ -14,7 +14,7 @@ class Alunos extends React.Component{
     }
 
     componentDidMount(){
-        fetch("http://localhost:8080/alunos/2")
+        fetch("http://localhost:8080/api/aluno/")
         .then(resposta => resposta.json())
         .then(dados => {
            this.setState({ alunos : dados}) 
@@ -40,7 +40,7 @@ class Alunos extends React.Component{
                         this.state.alunos.map((aluno) =>
 
                             <tr>
-                                <td> {aluno.aluno} </td>
+                                <td> {aluno.nome} </td>
                                 <td> {aluno.email} </td>
                                 <td>Atualizar Excluir</td>
                             </tr>
