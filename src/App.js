@@ -1,7 +1,8 @@
 
 import Home from './components/Home';
-import Sobre from './components/Sobre';
+import Sobre from './components/Cadastrar';
 import Alunos from './components/Alunos';
+
 import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,8 +15,8 @@ function App() {
 
       <Nav variant="tabs">
         <Nav.Link as={Link} to="/">Página inicial</Nav.Link>
-        <Nav.Link as={Link} to="/alunos">Cadastro de alunos</Nav.Link>
-        <Nav.Link as={Link} to="/sobre">Sobre</Nav.Link>
+        <Nav.Link as={Link} to="/alunos">Listar alunos</Nav.Link>
+        <Nav.Link as={Link} to="/sobre">Cadastrar</Nav.Link>
       </Nav>
 
       

@@ -1,7 +1,6 @@
-import { Button } from "bootstrap";
 import React from "react";
 import {Table, table} from "react-bootstrap";
-//import { alunos } from "../models";
+
 
 
 class Alunos extends React.Component{
@@ -20,9 +19,6 @@ class Alunos extends React.Component{
         .then(resposta => resposta.json())
         .then(dados => {
            this.setState({ alunos : dados}) 
-
-           
-
         })
     }
 
@@ -48,19 +44,10 @@ class Alunos extends React.Component{
                                 <td> {aluno.nome} </td>
                                 <td> {aluno.email} </td>
                                 <td>
-                                    
-                                    <button type="button" class="btn btn-primary btn-sm">Editar</button><span> </span>
-                                    <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+                                    Editar - Excluir
                                     
                                 </td>
-
-                                
-
-
                             </tr>
-                        
-                        
-
                       )
                     }
                 </tbody>

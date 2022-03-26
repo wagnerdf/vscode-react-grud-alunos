@@ -16,6 +16,5 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.BOOLEAN
       }
     });
-    // module.exports = Aluno;
     return Aluno;
   };
